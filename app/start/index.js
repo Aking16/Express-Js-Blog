@@ -7,7 +7,7 @@ const session = require('express-session');
 module.exports = (app, express) => {
     app.use(session({
         secret: process.env.SESSION_SECRET,
-        cookie: { maxAge: 60000 }
+        cookie: { maxAge: 24*60*60*1000 }
     }));
     app.use(flash());
     app.engine('handlebars', engine());
